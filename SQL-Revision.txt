@@ -1,0 +1,157 @@
+
+| emp_id | name  | department | salary | city   |
+| ------ | ----- | ---------- | ------ | ------ |
+| 1      | Amit  | Sales      | 50000  | Mumbai |
+| 2      | Sara  | Marketing  | 60000  | Delhi  |
+| 3      | John  | Sales      | 55000  | Pune   |
+| 4      | Neha  | HR         | 45000  | Mumbai |
+| 5      | Rahul | Marketing  | 70000  | Delhi  |
+
+Basic SQL Queries
+
+Q1
+Select all records from the table.
+
+SELECT * FROM Employees;
+
+Q2
+Select only name and salary.
+
+SELECT name, salary
+FROM Employees;
+
+Q3
+Find employees with salary greater than 55000.
+
+SELECT *
+FROM Employees
+WHERE salary > 55000;
+
+Q4
+Find employees from Mumbai.
+
+SELECT *
+FROM Employees
+WHERE city = 'Mumbai';
+
+Q5
+Find employees working in Sales department.
+
+SELECT *
+FROM Employees
+WHERE department = 'Sales';
+
+Sorting
+Q6
+Sort employees by salary (ascending).
+
+SELECT *
+FROM Employees
+ORDER BY salary;
+
+Q7
+Sort employees by salary (descending).
+
+SELECT *
+FROM Employees
+ORDER BY salary DESC;
+Aggregation Functions
+
+Q8
+Find average salary.
+
+SELECT AVG(salary)
+FROM Employees;
+
+Q9
+Find maximum salary.
+
+SELECT MAX(salary)
+FROM Employees;
+
+Q10
+Find minimum salary.
+
+SELECT MIN(salary)
+FROM Employees;
+
+Q11
+Find total salary paid.
+
+SELECT SUM(salary)
+FROM Employees;
+GROUP BY (Very Important for Data Analysts)
+
+Q12
+Find average salary by department.
+
+SELECT department, AVG(salary)
+FROM Employees
+GROUP BY department;
+
+Q13
+Count employees in each department.
+
+SELECT department, COUNT(*)
+FROM Employees
+GROUP BY department;
+
+Q14
+Find average salary by city.
+
+SELECT city, AVG(salary)
+FROM Employees
+GROUP BY city;
+
+HAVING Clause
+Q15
+Departments where average salary > 55000
+
+SELECT department, AVG(salary)
+FROM Employees
+GROUP BY department
+HAVING AVG(salary) > 55000;
+
+Filtering Multiple Conditions
+Q16
+Employees from Delhi with salary > 60000
+
+SELECT *
+FROM Employees
+WHERE city = 'Delhi'
+AND salary > 60000;
+
+Q17
+Employees from Sales OR HR department
+
+SELECT *
+FROM Employees
+WHERE department = 'Sales'
+OR department = 'HR';
+
+DISTINCT
+Q18
+Find unique cities.
+
+SELECT DISTINCT city
+FROM Employees;
+
+LIMIT
+Q19
+Show top 3 highest salaries.
+
+SELECT *
+FROM Employees
+ORDER BY salary DESC
+LIMIT 3;
+
+COUNT
+Q20
+Count total employees.
+
+SELECT COUNT(*)
+FROM Employees;
+
+
+
+
