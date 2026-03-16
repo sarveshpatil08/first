@@ -1,0 +1,80 @@
+Pandas (Data Analysis Library)
+
+Import:
+import pandas as pd
+
+Creating DataFrame
+data = {
+    "City":["Mumbai","Delhi","Pune"],
+    "Sales":[200,300,250]
+}
+df = pd.DataFrame(data)
+
+Viewing Data - First rows
+df.head()
+
+Last rows
+df.tail()
+
+Information
+df.info()
+
+Summary statistics
+df.describe()
+
+Select column
+df["Sales"]
+
+Multiple columns
+df[["City","Sales"]]
+
+Filtering Data
+Example: sales greater than 200
+df[df["Sales"] > 200]
+
+GroupBy
+example dataset :
+| City   | Sales |
+| ------ | ----- |
+| Mumbai | 200   |
+| Delhi  | 300   |
+| Mumbai | 250   |
+
+df.groupby("City")["Sales"].mean()
+
+Adding New Column
+Example: price per square foot
+
+df["Price_per_sqft"] = df["Price"] / df["Area"]
+
+Handling Missing Data
+Check missing values
+df.isnull()
+
+Count missing
+df.isnull().sum()
+
+Drop missing rows
+df.dropna()
+
+Remove Duplicate Rows
+df.drop_duplicates()
+
+Sorting
+df.sort_values("Sales")
+
+
+1 Check duplicate rows
+df.duplicated()
+
+2 Remove duplicates
+df.drop_duplicates()
+
+3 Average price
+df["Price"].mean()
+
+4 Maximum price
+df["Price"].max()
+
+
+
